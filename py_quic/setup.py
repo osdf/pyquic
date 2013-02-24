@@ -25,7 +25,7 @@ else:
         )]
 
 setup(
-    name = "_quic",
+    name = "py_quic",
     cmdclass = {"build_ext": build_ext},
     ext_modules = ext_modules
     )
