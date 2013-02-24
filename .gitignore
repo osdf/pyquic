@@ -1,0 +1,4 @@
+*.so
+*/build/
+py_quic/py_quic.cpp
+*.mat
