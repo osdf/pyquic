@@ -17,6 +17,19 @@ Requirements
 * [lapack](http://www.netlib.org/lapack/). Tested version is 3.4.1 (not necessary for OSX).
 
 
+Building
+--------
+In the directory```py_quic/```, run ```make```. Make sure that your lapack library is available.
+If necessary, add ```library_dirs``` in ```py_quic/setup.py```.
+
+
+Test
+----
+For testing the algorithm, run ```python test.py``` after a successful build. Note that
+the file ```ER_692.mat``` has to be in the main directory. It is contained in the
+MEX package archive from the [QUIC](http://www.cs.utexas.edu/~sustik/QUIC/).
+
+
 More Information
 ----------------
 See *Sparse Inverse Covariance Matrix Estimation Using Quadratic Approximation* by
