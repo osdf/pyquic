@@ -21,7 +21,7 @@
 #ifdef GDEBUG
 #include "startgdb.h"
 #endif
-
+#include "QUIC.h"
 #ifdef LANG_R
   #include <R_ext/Print.h>
   #define MSG Rprintf
@@ -220,7 +220,7 @@ static double projLogDet(unsigned long p, const double* S,
 #define QUIC_MSG_LINE    4
 
 // mode = {'D', 'P', 'T'} for 'default', 'path' or 'trace'. 
-extern "C"
+//extern "C"
 void QUIC(char mode, uint32_t& p, const double* S, double* Lambda0,
 	  uint32_t& pathLen, const double* path, double& tol,
 	  int32_t& msg, uint32_t& maxIter,
@@ -524,6 +524,7 @@ void QUIC(char mode, uint32_t& p, const double* S, double* Lambda0,
 	if (iter != NULL)
 	    iter[0] = NewtonIter;
     }
+
     if (mode == 'T' && iter != NULL)
 	iter[0] = NewtonIter - 1;
     free(activeSet);
@@ -541,14 +542,14 @@ void QUIC(char mode, uint32_t& p, const double* S, double* Lambda0,
 	MSG("QUIC CPU time: %.3f seconds\n", elapsedTime);
 }
 
-extern "C"
-void QUICR(char** modePtr, uint32_t& p, const double* S, double* Lambda0,
-	   uint32_t& pathLen, const double* path, double& tol,
-	   int32_t& msg, uint32_t& maxIter,
-	   double* X, double* W, double* opt, double* cputime,
-	   uint32_t* iter, double* dGap)
-{
-    char mode = **modePtr;
-    QUIC(mode, p, S, Lambda0, pathLen, path, tol, msg, maxIter, X, W,
-	 opt, cputime, iter, dGap);
-}
+//extern "C"
+//void QUICR(char** modePtr, uint32_t& p, const double* S, double* Lambda0,
+//	   uint32_t& pathLen, const double* path, double& tol,
+//	   int32_t& msg, uint32_t& maxIter,
+//	   double* X, double* W, double* opt, double* cputime,
+//	   uint32_t* iter, double* dGap)
+//{
+//    char mode = **modePtr;
+//    QUIC(mode, p, S, Lambda0, pathLen, path, tol, msg, maxIter, X, W,
+//	 opt, cputime, iter, dGap);
+//}
