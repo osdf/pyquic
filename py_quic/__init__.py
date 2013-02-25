@@ -5,12 +5,12 @@ import numpy as np
 def quic(S, L, mode="default", tol=1e-6, max_iter=1000, X0=None, W0=None,\
         path=None, msg=0):
     """
-	@param S        The empircal nxn covariance matrix.
+    @param S        The empirical nxn covariance matrix.
 
     @param L        Regularization parameters per element of the inverse
                     covariance matrix. Can be a scalar or nxn matrix.
 
-    @param mode     Computation mode: one of "default", "path", "trace"
+    @param mode     Computation mode: one of "default", "path", "trace".
 
     @param tol      Convergence threshold.
 
@@ -65,8 +65,8 @@ def quic(S, L, mode="default", tol=1e-6, max_iter=1000, X0=None, W0=None,\
                 "You specified an initial value for W0 but not for X0."
         if mode is "path":
             # Note here: memory layout is important:
-            # a row of X/W holds is a flattend Sn x Sn matrix,
-            # one row for every element in the _path_.
+            # a row of X/W holds a flattened Sn x Sn matrix,
+            # one row for every element in _path_.
             X = np.empty((pathLen, Sn*Sn))
             X[0,:] = np.eye(Sn).ravel()
             W = np.empty((pathLen, Sn*Sn))
