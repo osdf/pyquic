@@ -5,8 +5,28 @@ import numpy as np
 def quic(S, L, mode="default", tol=1e-6, max_iter=1000, X0=None, W0=None,\
         path=None, msg=0):
     """
-	@param 
+	@param S        The empircal nxn covariance matrix.
+
+    @param L        Regularization parameters per element of the inverse
+                    covariance matrix. Can be a scalar or nxn matrix.
+
+    @param mode     Computation mode: one of "default", "path", "trace"
+
+    @param tol      Convergence threshold.
+
+    @param max_iter Maximum number of Newton iterations.
+
+    @param X0       Initial guess for the inverse covariance matrix. If
+                    not provided, the diagonal identity matrix is used.
+
+    @param W0       Initial guess for the covariance matrix. If not provided
+                    the diagonal identity matrix is used.
+
+    @param path     In "path" mode, an array of float values for scaling L.
+
+    @param msg      Verbosity level.
     """
+
     assert mode in ["default", "path", "trace"], "QUIC:arguments\n" +\
         "Invalid mode, use: 'default', 'path' or 'trace'."
 
