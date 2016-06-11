@@ -2,15 +2,19 @@ import numpy
 from distutils.core import setup
 from distutils.extension import Extension
 from Cython.Distutils import build_ext
-import sys
+import platform
 
 
-if sys.platform == 'darwin':
+if platform.system() == 'Darwin':
+    extra_compile_args = ['-I/System/Library/Frameworks/vecLib.framework/Headers']
+    if 'ppc' in platform.machine():
+        extra_compile_args.append('-faltivec')
+        
     ext_modules = [Extension(
         name="py_quic",
         sources=["QUIC.C", "py_quic.pyx"],
         include_dirs = [numpy.get_include()],
-        extra_compile_args=['-faltivec', '-I/System/Library/Frameworks/vecLib.framework/Headers'],
+        extra_compile_args=extra_compile_args,
         extra_link_args=["-Wl,-framework", "-Wl,Accelerate"],
         language="c++"
         )]
