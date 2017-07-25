@@ -3,7 +3,7 @@ Summary
 
 A python wrapper for [QUIC](http://www.cs.utexas.edu/~sustik/QUIC/),
 computing a sparse inverse covariance matrix estimation using quadratic 
-approximation. It is based on Version 1.1 of the [QUIC](http://www.cs.utexas.edu/~sustik/QUIC/) code. 
+approximation. It is based on Version 1.2 of the [QUIC](http://www.cs.utexas.edu/~sustik/QUIC/) code. 
 The wrapper was  successfully tested on OSX (10.6), Ubuntu (11.04) and Arch Linux.
 
 The modifications to the original C++ source (from the above website) are minimal:
