@@ -3,7 +3,7 @@ Summary
 
 A python wrapper for [QUIC](https://bigdata.oden.utexas.edu/software/1035/),
 computing a sparse inverse covariance matrix estimation using quadratic 
-approximation. It is based on Version 1.2 of the [QUIC](http://www.cs.utexas.edu/~sustik/QUIC/) code. 
+approximation. It is based on Version 1.2 of the [QUIC](https://bigdata.oden.utexas.edu/software/1035/) code. 
 The wrapper was  successfully tested on OSX (10.6), Ubuntu (11.04) and Arch Linux.
 
 The modifications to the original C++ source (from the above website) are minimal:
@@ -27,10 +27,10 @@ Testing
 -------
 For testing the algorithm, run ```python test.py``` after a successful build. Note that
 the file ```ER_692.mat``` has to be in the main directory. It is contained in the
-MEX package archive from the [QUIC](http://www.cs.utexas.edu/~sustik/QUIC/).
+MEX package archive from the [QUIC](https://bigdata.oden.utexas.edu/software/1035/).
 
 More Information
 ----------------
 See *Sparse Inverse Covariance Matrix Estimation Using Quadratic Approximation* by
 Cho-Jui Hsieh, Mátyás A. Sustik, Inderjit S. Dhillon, Pradeep Ravikumar, available
-on the [QUIC](http://www.cs.utexas.edu/~sustik/QUIC/) website.
+on the [QUIC](https://bigdata.oden.utexas.edu/software/1035/) website.
